@@ -1,9 +1,16 @@
 package com.mylocalkart;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.global.utils.GlobalConstants;
+
+/**
+ * Created by sourin on 7/18/15.
+ */
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -11,6 +18,23 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        launchHomeScreenActivity();
+    }
+
+    private void launchHomeScreenActivity() {
+        Thread timer = new Thread(){
+            public void run(){
+                try{
+                    sleep(GlobalConstants.SPLASH_SCREEN_TIMEOUT);
+                }catch(InterruptedException e){
+                    e.printStackTrace();
+                }finally{
+                    Intent intentHomeActivity = new Intent(SplashScreen.this, HomeScreen.class);
+                    startActivity(intentHomeActivity);
+                }
+            }
+        };
+        timer.start();
     }
 
     @Override
