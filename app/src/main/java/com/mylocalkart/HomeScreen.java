@@ -1,7 +1,7 @@
 package com.mylocalkart;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -13,7 +13,7 @@ import android.widget.Toast;
  * Created by sourin on 7/18/15.
  */
 
-public class HomeScreen extends Activity implements View.OnTouchListener{
+public class HomeScreen extends AppCompatActivity implements View.OnTouchListener{
 
     private LinearLayout llMobilesAndTablets;
     private LinearLayout llKitchenAppliances;
