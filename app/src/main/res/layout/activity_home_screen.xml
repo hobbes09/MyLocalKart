@@ -4,56 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="3"
+    android:weightSum="100"
     tools:context="com.mylocalkart.HomeScreen">
 
     <LinearLayout
-        android:id="@+id/llMobilesAndTablets"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#2C33EB">
+        android:layout_weight="30"
+        android:background="#C43333">
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/llAppliances"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:weightSum="2"
-        android:background="#30EB2C">
-
-        <LinearLayout
-            android:id="@+id/llKitchenAppliances"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="10dp"
-            android:orientation="vertical"
-            android:background="#EBDF2C">
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llHomeAppliances"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="10dp"
-            android:orientation="vertical"
-            android:background="#E82CEB">
-        </LinearLayout>
-
+        android:gravity="center"
+        android:layout_weight="5">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/category_header"
+            android:gravity="center_horizontal"
+            android:padding="3.5dp"
+            android:background="@drawable/border"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/llTvAndVideoPlayer"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#EB4C2C">
+        android:layout_weight="65"
+        android:background="#79C433">
     </LinearLayout>
+
 
 </LinearLayout>
