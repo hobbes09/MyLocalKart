@@ -13,12 +13,7 @@ import android.widget.Toast;
  * Created by sourin on 7/18/15.
  */
 
-public class HomeScreen extends AppCompatActivity implements View.OnTouchListener{
-
-    private LinearLayout llMobilesAndTablets;
-    private LinearLayout llKitchenAppliances;
-    private LinearLayout llHomeAppliances;
-    private LinearLayout llTvAndVideoPlayer;
+public class HomeScreen extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +23,6 @@ public class HomeScreen extends AppCompatActivity implements View.OnTouchListene
     }
 
     private void initialise() {
-        llMobilesAndTablets = (LinearLayout)findViewById(R.id.llMobilesAndTablets);
-        llKitchenAppliances = (LinearLayout)findViewById(R.id.llKitchenAppliances);
-        llHomeAppliances = (LinearLayout)findViewById(R.id.llHomeAppliances);
-        llTvAndVideoPlayer = (LinearLayout)findViewById(R.id.llTvAndVideoPlayer);
-        llMobilesAndTablets.setOnTouchListener(this);
-        llKitchenAppliances.setOnTouchListener(this);
-        llHomeAppliances.setOnTouchListener(this);
-        llTvAndVideoPlayer.setOnTouchListener(this);
     }
 
     @Override
@@ -60,24 +47,4 @@ public class HomeScreen extends AppCompatActivity implements View.OnTouchListene
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public boolean onTouch(View view, MotionEvent event) {
-        if(event.getAction() == MotionEvent.ACTION_UP){
-            switch(view.getId()){
-                case R.id.llMobilesAndTablets:
-                    Toast.makeText(getApplicationContext(), "Mobiles and Tablets", Toast.LENGTH_LONG).show();
-                    break;
-                case R.id.llKitchenAppliances:
-                    Toast.makeText(getApplicationContext(), "Kitchen Appliances", Toast.LENGTH_LONG).show();
-                    break;
-                case R.id.llHomeAppliances:
-                    Toast.makeText(getApplicationContext(), "Home Appliances", Toast.LENGTH_LONG).show();
-                    break;
-                case R.id.llTvAndVideoPlayer:
-                    Toast.makeText(getApplicationContext(), "TV & Video Player", Toast.LENGTH_LONG).show();
-                    break;
-            }
-        }
-        return true;
-    }
 }
