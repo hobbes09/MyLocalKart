@@ -1,4 +1,4 @@
-package com.mylocalkart;
+package com.mylocalkart.splashscreen;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.global.utils.GlobalConstants;
+import com.mylocalkart.homescreen.HomeScreen;
+import com.mylocalkart.R;
 
 /**
  * Created by sourin on 7/18/15.
