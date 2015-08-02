@@ -1,4 +1,4 @@
-package com.mylocalkart;
+package com.mylocalkart.homescreen;
 
 
 import android.support.v4.app.Fragment;
@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+import com.mylocalkart.R;
+
+
 public class AdScreenSlidePageFragment extends Fragment {
 
     public static final String ARG_PAGE = "page";
