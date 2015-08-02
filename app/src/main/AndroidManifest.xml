@@ -20,6 +20,10 @@
             android:name=".homescreen.HomeScreen"
             android:label="@string/title_activity_home_screen" >
         </activity>
+        <activity
+            android:name=".searchresultscreen.SearchResultScreen"
+            android:label="@string/title_activity_search_result_screen" >
+        </activity>
     </application>
 
 </manifest>
