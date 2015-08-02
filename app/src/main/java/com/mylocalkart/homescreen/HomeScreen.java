@@ -12,6 +12,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class HomeScreen extends AppCompatActivity{
 
     private ViewPager vpAds;
     private PagerAdapter mAdScreenSlidePagerAdapter;
+    private ImageView ivSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +44,12 @@ public class HomeScreen extends AppCompatActivity{
         mActionBar.setDisplayShowTitleEnabled(false);
         LayoutInflater mInflater = LayoutInflater.from(this);
 
-        View mCustomView = mInflater.inflate(R.layout.actionbar_homescreen, null);
-        LinearLayout mActionBarLinearLayout = (LinearLayout)mCustomView.findViewById(R.id.llHomeScreenActionBar);
-        mActionBarLinearLayout.setOnTouchListener(new View.OnTouchListener() {
+        View mCustomView = mInflater.inflate(R.layout.actionbar_search, null);
+        ivSearch = (ImageView)mCustomView.findViewById(R.id.ivSearch);
+        ivSearch.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Toast.makeText(getApplicationContext(), "ActionBar touched", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Search tool instantiated", Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
