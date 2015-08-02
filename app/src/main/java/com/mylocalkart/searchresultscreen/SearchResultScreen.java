@@ -1,5 +1,6 @@
 package com.mylocalkart.searchresultscreen;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,11 +10,12 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mylocalkart.R;
 
-public class SearchResultScreen extends AppCompatActivity {
+public class SearchResultScreen extends AppCompatActivity /* implements ActionBar.TabListener */{
 
     ImageView ivSearch;
 
@@ -42,8 +44,52 @@ public class SearchResultScreen extends AppCompatActivity {
 
         mActionBar.setCustomView(mCustomView);
         mActionBar.setDisplayShowCustomEnabled(true);
+
+//        // Adding tabs
+//        mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+//        ImageView ivTabAB;
+//        TextView tvTabAB;
+//
+//        ActionBar.Tab filterTab = mActionBar.newTab();
+//        filterTab.setCustomView(R.layout.actionbar_tab);
+//        ivTabAB = (ImageView)filterTab.getCustomView().findViewById(R.id.ivTabAB);
+//        ivTabAB.setImageResource(R.drawable.search_icon);  // To be changed
+//        tvTabAB = (TextView)filterTab.getCustomView().findViewById(R.id.tvTabAB);
+//        tvTabAB.setText("Filter");
+//        filterTab.setTabListener(this);
+//        mActionBar.addTab(filterTab);
+//
+//        ActionBar.Tab sortTab = mActionBar.newTab();
+//        sortTab.setCustomView(R.layout.actionbar_tab);
+//        ivTabAB = (ImageView)sortTab.getCustomView().findViewById(R.id.ivTabAB);
+//        ivTabAB.setImageResource(R.drawable.search_icon);  // To be changed
+//        tvTabAB = (TextView)sortTab.getCustomView().findViewById(R.id.tvTabAB);
+//        tvTabAB.setText("Sort");
+//        sortTab.setTabListener(this);
+//        mActionBar.addTab(sortTab);
     }
 
+//    @Override
+//    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+//        switch(tab.getPosition()){
+//            case 0:
+//                Toast.makeText(getApplicationContext(), "Filter Selected", Toast.LENGTH_SHORT).show();
+//                break;
+//            case 1:
+//                Toast.makeText(getApplicationContext(), "Sort Selected", Toast.LENGTH_SHORT).show();
+//                break;
+//        }
+//    }
+//
+//    @Override
+//    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
+//
+//    }
+//
+//    @Override
+//    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+//
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
