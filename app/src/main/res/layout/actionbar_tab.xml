@@ -6,19 +6,20 @@
     android:orientation="horizontal"
     android:weightSum="10">
 
+    <!--
     <ImageView
         android:id="@+id/ivTabAB"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_margin="3dp"
+        android:padding="5dp"
         android:layout_weight="5"/>
+    -->
 
     <TextView
         android:id="@+id/tvTabAB"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_margin="3dp"
-        android:layout_weight="5"/>
+        android:layout_weight="10"/>
 
 
 </LinearLayout>
