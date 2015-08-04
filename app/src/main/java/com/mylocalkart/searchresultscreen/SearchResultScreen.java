@@ -1,5 +1,6 @@
 package com.mylocalkart.searchresultscreen;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,12 +20,18 @@ import com.mylocalkart.R;
 public class SearchResultScreen extends AppCompatActivity implements ActionBar.TabListener{
 
     ImageView ivSearch;
+    LinearLayout llFragmentContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result_screen);
         customizeActionBar();
+        initialize();
+    }
+
+    private void initialize(){
+        llFragmentContainer = (LinearLayout)findViewById(R.id.llFragmentContainer);
     }
 
     private void customizeActionBar() {
@@ -83,6 +91,11 @@ public class SearchResultScreen extends AppCompatActivity implements ActionBar.T
         switch(tab.getPosition()){
             case 0:
                 Toast.makeText(getApplicationContext(), "Search results Selected", Toast.LENGTH_SHORT).show();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                SearchResultTabFragment searchResultTabFragment = new SearchResultTabFragment();
+                fragmentTransaction.add(R.id.llFragmentContainer, searchResultTabFragment);
+                fragmentTransaction.commit();
                 break;
             case 1:
                 Toast.makeText(getApplicationContext(), "Filter Selected", Toast.LENGTH_SHORT).show();
