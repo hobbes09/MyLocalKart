@@ -5,19 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!--<GridView-->
-        <!--android:id="@+id/gvSearchResults"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="center_horizontal"-->
-        <!--android:numColumns="2">-->
-    <!--</GridView>-->
-
-    <TextView
-        android:layout_width="wrap_content"
+    <GridView
+        android:id="@+id/gvSearchResults"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="50dp"
         android:layout_gravity="center_horizontal"
-        android:text="This is the fragment layout"/>
+        android:numColumns="2">
+    </GridView>
 
 </LinearLayout>
