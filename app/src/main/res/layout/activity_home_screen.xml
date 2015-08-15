@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/ACTIVITY_BACKGROUND_COLOR"
         android:weightSum="100">
 
         <LinearLayout
@@ -23,14 +24,14 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
-                android:background="#29C3B6">
+                android:background="@color/ACTIVITY_BACKGROUND_COLOR">
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="90"
                 android:orientation="vertical"
-                android:background="#C43333">
+                android:background="@color/ACTIVITY_BACKGROUND_COLOR">
                 <android.support.v4.view.ViewPager
                     xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/vpAds"
@@ -41,7 +42,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
-                android:background="#189769">
+                android:background="@color/ACTIVITY_BACKGROUND_COLOR">
             </LinearLayout>
         </LinearLayout>
 
@@ -54,16 +55,50 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/category_header"
+                android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:padding="3.5dp"
                 android:background="@drawable/border"/>
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/llCategoryListing"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="65"
+            android:weightSum="100"
+            android:paddingTop="5dp"
             android:background="#79C433">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="40"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/ivCategory1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/category"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="40"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/ivCategory2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/category"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="20"
+                android:padding="5dp">
+            </LinearLayout>
+
         </LinearLayout>
 
 

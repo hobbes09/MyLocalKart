@@ -1,5 +1,6 @@
 package com.mylocalkart.homescreen;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -18,16 +19,18 @@ import android.widget.Toast;
 
 import com.global.utils.GlobalConstants;
 import com.mylocalkart.R;
+import com.mylocalkart.searchresultscreen.SearchResultScreen;
 
 /**
  * Created by sourin on 7/18/15.
  */
 
-public class HomeScreen extends AppCompatActivity{
+public class HomeScreen extends AppCompatActivity implements View.OnTouchListener{
 
     private ViewPager vpAds;
     private PagerAdapter mAdScreenSlidePagerAdapter;
     private ImageView ivSearch;
+    private LinearLayout llCategoryListing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,12 @@ public class HomeScreen extends AppCompatActivity{
         setContentView(R.layout.activity_home_screen);
         customizeActionBar();
         configureAdsViewPager();
+        initialize();
+    }
+
+    private void initialize() {
+        llCategoryListing = (LinearLayout)findViewById(R.id.llCategoryListing);
+        llCategoryListing.setOnTouchListener(this);
     }
 
     private void customizeActionBar() {
@@ -99,6 +108,16 @@ public class HomeScreen extends AppCompatActivity{
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        if(v.getId() == R.id.llCategoryListing){
+            Toast.makeText(getApplicationContext(), "You touched me !!!", Toast.LENGTH_SHORT).show();
+            Intent myIntent = new Intent(HomeScreen.this, SearchResultScreen.class);
+            HomeScreen.this.startActivity(myIntent);
+        }
+        return false;
     }
 
     /**

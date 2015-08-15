@@ -48,19 +48,18 @@ public class SearchResultTabFragment extends Fragment {
 
         // set gridView items
         Bitmap miniProductIcon = BitmapFactory.decodeResource(this.getResources(), R.drawable.camera_icon);
-        String miniProductName = "Camera";
-        String miniProductPrice = "Rs. 10000";
+        String miniProductName = "Nikon D3000";
+        String miniProductPrice = "Rs. 30000";
+        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
+        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
+        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
+        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
+        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
+        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
+        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
+        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
 
-        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
-        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
-        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
-        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
-        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
-        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
-        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
-        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
-        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
-        gridArray.add(new MiniProduct(miniProductIcon, miniProductName, miniProductPrice));
+
 
         gvSearchResults = (GridView)fragmentLayoutView.findViewById(R.id.gvSearchResults);
         customGridAdapter = new CustomGridViewAdapter(getActivity(), R.layout.grid_search_screen_tab_results, gridArray);
