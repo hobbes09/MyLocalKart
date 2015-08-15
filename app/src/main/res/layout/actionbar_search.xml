@@ -6,7 +6,7 @@
     android:background="@color/ACTION_BAR_COLOR">
 
     <LinearLayout
-        android:id="@+id/llHomeScreenActionBar"
+        android:id="@+id/llSearchActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
