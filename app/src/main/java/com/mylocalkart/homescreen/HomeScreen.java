@@ -1,6 +1,8 @@
 package com.mylocalkart.homescreen;
 
+import android.content.Context;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v7.app.ActionBar;
@@ -12,6 +14,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -28,14 +31,29 @@ public class HomeScreen extends AppCompatActivity{
     private ViewPager vpAds;
     private PagerAdapter mAdScreenSlidePagerAdapter;
     private ImageView ivSearch;
+    private ExpandableListView elvCategories;
+
+    public static Context mHomeScreenContext;
+    public static Resources mResources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_home_screen);
+        initializeUiElements(); // DON'T CHANGE ORDER HERE
         customizeActionBar();
         configureAdsViewPager();
+
+        //For setting up category grid-list
+        CategoryDataAdapterManager.prepareCategoryDataAdapter(elvCategories);
+    }
+
+    private void initializeUiElements() {
+        mHomeScreenContext = getApplicationContext();
+        mResources = getResources();
+        vpAds = (ViewPager)findViewById(R.id.vpAds);
+        elvCategories = (ExpandableListView)findViewById(R.id.elvCategories);
     }
 
     private void customizeActionBar() {
@@ -59,7 +77,6 @@ public class HomeScreen extends AppCompatActivity{
     }
 
     private void configureAdsViewPager() {
-        vpAds = (ViewPager)findViewById(R.id.vpAds);
         mAdScreenSlidePagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         vpAds.setAdapter(mAdScreenSlidePagerAdapter);
         vpAds.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
