@@ -108,7 +108,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         });
 
         int totalHeight = 0;
-        for(int size = 0; size < mSubCategoryGridAdapter.getCount(); size++){
+        for(int size = 0; size < mSubCategoryGridAdapter.getCount(); size = size+2){
             LinearLayout linearLayout = (LinearLayout) mSubCategoryGridAdapter.getView(size, null, mSubCategoryCustomGridView);
             ImageView imageView = (ImageView) linearLayout.getChildAt(0);
             imageView.measure(0, 0);
